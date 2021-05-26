@@ -4,9 +4,9 @@ $custom-ter: Gray 4;
 $custom-light: #F5F5F5;
 $custom-dark: #37392E;
 
-$title-font: 'Antonio';
-$main-font: 'Antonio';
-$extra-font: 'Montserrat';
+$title-font: Antonio;
+$main-font: Antonio;
+$extra-font: Montserrat;
 
 
 @import "~bootstrap/scss/bootstrap";
@@ -21,14 +21,15 @@ html, body {
 }
 
 #navbar {
-    height: 5rem;
+    height: 3rem;
     background-color: $custom-prim !important;
-    
+    font-family: $title-font;
     font-size: 1.5rem;
+    color: $custom-sec !important;
 }
 
 nav > a {
     font-family: $title-font;
-    font-size: 3rem !important;
-    color: $custom-ter !important;
+    font-size: 2rem !important;
+    color: $custom-sec !important;
 }
