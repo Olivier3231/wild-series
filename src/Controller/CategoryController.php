@@ -1,6 +1,6 @@
 <?php
 
-// src/Controller/ProgramController.php
+// src/Controller/CategoryController.php
 
 namespace App\Controller;
 
@@ -11,18 +11,18 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\Routing\Annotation\Route;
 
-use App\Entity\Program;
+use App\Entity\Category;
 
 /**
- * @Route("/programs", name="program_")
+ * @Route("/categories", name="category_")
  */
 
-class ProgramController extends AbstractController
+class CategoryController extends AbstractController
 
 {
 
     /**
-     * Show all rows from Program's entity
+     * Show all rows from Categroy's entity
      * 
      * @Route("/", name="index")
      * @return Response A response instance
@@ -32,13 +32,13 @@ class ProgramController extends AbstractController
 
     {
 
-            $programs = $this->getDoctrine()
-                ->getRepository(Program::class)
+            $categories = $this->getDoctrine()
+                ->getRepository(Category::class)
                 ->findAll();
 
             return $this->render(
-                'program/index.html.twig',
-                ['programs' => $programs]
+                'category/index.html.twig',
+                ['categories' => $categories]
             );
 
 
@@ -67,4 +67,3 @@ class ProgramController extends AbstractController
     ]);
     }
 }
-

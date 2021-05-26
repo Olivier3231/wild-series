@@ -12,7 +12,7 @@ $extra-font: Montserrat;
 @import "~bootstrap/scss/bootstrap";
 
 * {
-    color: $custom-dark !important;
+    
     font-family: $main-font;
 }
 
@@ -25,7 +25,7 @@ html, body {
     background-color: $custom-prim !important;
     font-family: $title-font;
     font-size: 1.5rem;
-    color: $custom-sec !important;
+    color: $custom-sec;
 }
 
 nav > a {
