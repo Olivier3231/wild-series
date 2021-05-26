@@ -23,20 +23,14 @@ class Program
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text")
      */
     private $summary;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $poster;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
 
     public function getId(): ?int
     {
@@ -75,18 +69,6 @@ class Program
     public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }
