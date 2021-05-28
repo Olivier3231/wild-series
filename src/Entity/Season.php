@@ -34,6 +34,11 @@ class Season
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Program::class, inversedBy="season")
+     */
+    private $program;
+
 
     public function getId(): ?int
     {
@@ -72,6 +77,18 @@ class Season
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getProgram(): ?Program
+    {
+        return $this->program;
+    }
+
+    public function setProgram(?Program $program): self
+    {
+        $this->program = $program;
 
         return $this;
     }
