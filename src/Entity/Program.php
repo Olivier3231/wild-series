@@ -25,7 +25,7 @@ class Program
     /**
      * @ORM\Column(type="text")
      */
-    private $summary;
+    private $synopsis;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -48,10 +48,7 @@ class Program
      */
     private $year;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Season::class, inversedBy="program")
-     */
-    private $season;
+    
 
     public function getId(): ?int
     {
@@ -70,14 +67,14 @@ class Program
         return $this;
     }
 
-    public function getSummary(): ?string
+    public function getSynopsis(): ?string
     {
-        return $this->summary;
+        return $this->synopsis;
     }
 
-    public function setSummary(string $summary): self
+    public function setSynopsis(string $synopsis): self
     {
-        $this->summary = $summary;
+        $this->synopsis = $synopsis;
 
         return $this;
     }
@@ -130,15 +127,5 @@ class Program
         return $this;
     }
 
-    public function getSeason(): ?Season
-    {
-        return $this->season;
-    }
-
-    public function setSeason(?Season $season): self
-    {
-        $this->season = $season;
-
-        return $this;
-    }
+    
 }

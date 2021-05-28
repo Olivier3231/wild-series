@@ -34,15 +34,6 @@ class Season
      */
     private $description;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Program::class, mappedBy="season")
-     */
-    private $program;
-
-    public function __construct()
-    {
-        $this->program = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
