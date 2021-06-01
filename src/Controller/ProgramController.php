@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\Routing\Annotation\Route;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+
 use App\Entity\Program;
 
 use App\Entity\Season;
@@ -72,18 +74,19 @@ class ProgramController extends AbstractController
         );
     }
     return $this->render('program/show.html.twig', [
-        'program' => $program, 'season' => $seasons
+        'program' => $program, 'seasons' => $seasons
     ]);
     }
 
     /**
     * Getting a season by id and by program
     *
-    * @Route("/{programId<^[0-9]+$>}/seasons/{seasonId<^[0-9]+$>", name="season_show")
+    * @Route("/{programId<^[0-9]+$>}/seasons/{seasonId<^[0-9]+$>}", name="season_show")
+    * @entity("season", expr="repository.find(seasonId)")
     * @return Response
     */
 
-    public function showSeason(int $programId, int $seasonId): Response
+    public function showSeason(Program $programId, Season $seasonId): Response
     {
         $program = $this->getDoctrine()
         ->getRepository(Program::class)
