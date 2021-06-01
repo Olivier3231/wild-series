@@ -81,7 +81,7 @@ class ProgramController extends AbstractController
     /**
     * Getting a season by id and by program
     *
-    * @Route("/{programId<^[0-9]+$>}/seasons/{seasonId<^[0-9]+$>}", name="season_show")
+    * @Route("/{programId}/seasons/{seasonId}", name="season_show")
     * @entity("season", expr="repository.find(seasonId)")
     * @return Response
     */

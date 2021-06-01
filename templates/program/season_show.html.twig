@@ -4,9 +4,9 @@
 {% block body %}
 
 <div class="media">
-  <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
   <div class="media-body">
-    <h1 class="mt-0">{{ season.number }} {{season.year }}</h1>
+    <h1 class="mt-0">{{ program.title }}</br>
+    Season  {{ season.number }} ,{{season.year }}</h1>
   </div>
   {% for episode in episodes %}
         <div>
