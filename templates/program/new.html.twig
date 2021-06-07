@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+   {{ form_start(form) }}
+   <div class="form-control">
+    <i class="fa fa-calendar"></i> {{ form_label(form) }}
+    {{ form_widget(form) }}
+
+    <small>{{ form_help(form) }}</small>
+
+    <div class="form-error">
+        {{ form_errors(form) }}
+    </div>
+</div>
+   
+    <input type='submit' value='Add program'>
+    {{ form_end(form) }}
+{% endblock %}
