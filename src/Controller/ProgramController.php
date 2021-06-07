@@ -49,7 +49,7 @@ class ProgramController extends AbstractController
         // Get data from HTTP request
         $form->handleRequest($request);
         // Was the form submitted ?
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             // Deal with the submitted data
             // Get the Entity Manager
         $entityManager = $this->getDoctrine()->getManager();
@@ -92,7 +92,7 @@ class ProgramController extends AbstractController
     /**
     * Getting a program by id
     *
-    * @Route("/show/{id<^[0-9]+$>}", name="show")
+    * @Route("/show/{id<^[0-9]+$>}",methods={"GET"}, name="show")
     * @return Response
     */
 

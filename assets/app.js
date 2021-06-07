@@ -11,4 +11,8 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
+//On ajoute jquery et le Javascript de Bootstrap
+const $ = require('jquery');
+require('bootstrap');
+
 console.log('Hello Webpack Encore !');
