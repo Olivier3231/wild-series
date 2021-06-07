@@ -60,7 +60,6 @@ class Program
         $this->season = new ArrayCollection();
     }
 
-    
 
     public function getId(): ?int
     {
