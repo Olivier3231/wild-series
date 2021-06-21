@@ -70,7 +70,7 @@ class Program
     private $season;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="programs")
+     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="programs", cascade={"persist", "remove"})
      */
     private $actors;
 

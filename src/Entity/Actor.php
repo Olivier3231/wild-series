@@ -25,7 +25,7 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="actors")
+     * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="actors",cascade={"persist", "remove"} )
      * @ORM\JoinTable(name="actor_program")
      */
     private $programs;
