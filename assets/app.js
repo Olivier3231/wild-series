@@ -15,4 +15,4 @@ import './bootstrap';
 const $ = require('jquery');
 require('bootstrap');
 
-console.log('Hello Webpack Encore !');
+

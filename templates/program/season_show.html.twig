@@ -7,10 +7,11 @@
   <div class="media-body">
     <h1 class="mt-0">{{ program.title }}</br>
     Season  {{ season.number }} ,{{season.year }}</h1>
+    <p> {{ season.description }} </p>
   </div>
   {% for episode in episodes %}
         <div>
-        {<a href="{{ path("program_episode_show", {programId: program.id, seasonId: season.id, episodeId: episode.id }) }}">
+        <a href="{{ path("program_episode_show", {programId: program.id, seasonId: season.id, episodeId: episode.id }) }}">
         <h2>Episode {{ episode.number }}: {{ episode.title }}</h2>
         </a>   
         </div>
