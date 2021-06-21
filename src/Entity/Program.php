@@ -49,6 +49,7 @@ class Program
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
+     * @Assert\NotBlank(message="ne me laisse pas tout vide")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
@@ -64,7 +65,7 @@ class Program
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program")
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program", orphanRemoval=true)
      */
     private $season;
 

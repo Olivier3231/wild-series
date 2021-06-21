@@ -15,6 +15,8 @@ class CategoryFixtures extends Fixture
         'Animation',
         'Fantastique',
         'Horreur',
+        'Drame',
+        'Comedie',
     ];
     
     public function load(ObjectManager $manager)
@@ -22,8 +24,8 @@ class CategoryFixtures extends Fixture
         foreach (self::CATEGORIES as $key => $categoryName) {
             $category = new Category();
             $category->setName($categoryName);
-
             $manager->persist($category);
+            $this->addReference('category_' . $key, $category);
 
         }
         $manager->flush();

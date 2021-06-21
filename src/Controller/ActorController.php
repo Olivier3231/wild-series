@@ -6,7 +6,6 @@ use App\Repository\ActorRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Program;
 use App\Entity\Actor;
 
 class ActorController extends AbstractController
